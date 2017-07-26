@@ -1,238 +1,116 @@
-// Answer the following questions in this file using comments without running the code
-
 // 1.
-// What does `givenName` equal right now?
-let givenName;
-// A:
+// Define a function max() that takes two numbers as arguments and returns the largest of them. Use the if-then-else construct available in JavaScript.
+// Then, write and example of using the function.
+
+function max(x, y){
+  
+    if (x > y) {
+       return('is greater than');
+    } else {
+        return('is less than');
+    }
+   
+}
+console.log(max(2,3));
 
 
+    
 // 2.
-// What is `givenName` set to right now?
-givenName="Tim";
-// A:
+// Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.
+// Then, write and example of using the function.
+
+function maxofthrees(num1, num2, num3){
+        var max = 0;
+        if(num1 > num2){
+            if(num1 > num3){
+                num1 = max;
+            }
+            else{
+                num3 = max;
+            }
+        }
+        else{
+            if(num2 > num3){
+                num2 = max;
+            }
+        }
+    return;
+    }
+maxofthrees(10,9,8)
+
 
 
 // 3.
-// What is `givenName` set to right now?
-givenName = givenName;
-// A:
+// Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
+// Then, write and example of using the function.
+function isVowel(char){
+    if (char == "a"|| char == "e"||char == "i"||char == "o"|| char == "u") {
+      return true
+    } else {
+      return false
+    }
+}
+console.log(isVowel('a'));
 
 
 // 4.
-// What is `greeting` set to?
-let greeting = "Hello, how are you? " + givenName;
-console.log(greeting);
-// A:
+// Write a function called `sum` that takes two parameters and returns the sum of those 2 numbers.
+// Then, write and example of using the function.
+function sum(x, y){
+    return ( x + y);
+    
+}
+console.log(sum(2,3));
 
 
 // 5.
-// What is `math` set to?
-let high = 50;
-let low  = 10;
-let math = high - low;
-console.log(math);
-// A:
+// Write a function named `avg` that takes 3 parameters and returns the average of those 3 numbers.
+// Then, write and example of using the function.
+function avg(x,y,z){
+    return ( x + y+ z/3 );
+}
+console.log(avg(1,2,3));
 
 
 // 6.
-// What is `math` set to? 
-math = high - "5";
-console.log(math);
-// A:
-
+// Write a function called `getLength` that takes one parameter (a string) and returns the length
+// Then, write and example of using the function.
+function getlength(xyz){
+    return (xyz.length)
+    
+}
+console.log(getlength("ashwinder"));
 
 // 7.
-// Create a variable to calculate Tim's age
-// The answer should read "Tim is 33 years old"
-// The answer shoud not be written in a comment.
-let born = 1984;
-let today = 2017;
-if (age === born-today)
-
+// Write a function called `greaterThan` that takes two parameters
+// and returns `true` if the second parameter is greater than the first.
+// Otherwise the function should return `false`.
+// Then, write and example of using the function.
+function greaterthan(x,y){
+   if( y > x ){
+       return ('true');
+   } else {return ('false');
+          }
+}
+console.log(greaterthan(2,3));
 
 // 8.
-// Adjust this code. Store some information in the following variables.
-// A:
-let yourName = ash;
-let instructorName = gargi;
+// Write a function called `greet` that takes a
+// single parameter and returns a string that
+// is formated like "Hello, Name!" where *Name*
+// is the parameter that was passed in.
+// Then, write and example of using the function.
 
+function greet(x){
+    if( x === name){return ("Hello, Name");}
+}
+console.log(greet(name));
 
 // 9.
-// Update the variables `yourName` and `instructorName` so the expression below reads correctly.
-// A:
-
-
-// This statement should read correctly
-let statement = yourName + " is taking a class at The Iron Yard, my instructor's name is " + instructorName;
-console.log(statement)
-
-
-// 10.
-// We've created a variable named after each primitive type.
-// Use the `=` operator to assign a value to each variable matching the type in the name.
-let myNumber=7;
-let myString="ash";
-let myBoolean=true;
-// This one's a little tricky - think carefully about what makes a value "undefined"!
-let myUndefined="";
-// A:
-
-
-// For questions 11 - 19: List which boolean value will be stored in each variable. (Remember: `==` does not check data type)
-
-// 11.
-let x = true;
-(false == 0);
-// A.
-
-
-// 12.
-let y = true;
-    (false == "");
-// A.
-
-
-// 13.
-let z = false;
-(0 == "");
-// A.
-
-
-// 14.
-let a = true;
-(null == null);
-// A.
-
-
-// 25.
-let b = false;
-(undefined == undefined);
-// A.
-
-
-// 16.
-let c = false;
-(undefined == null);
-// A.
-
-
-// 17.
-let d = false;
-(null == false);
-// A.
-
-
-// 18.
-let e = false;
-(NaN == null);
-// A.
-
-
-// 19.
-let f = false;
-(NaN == NaN);
-// A.
-
-
-// 20.
-// Fix the `if...else` statement below by adding an `if` keyword and conditional expression.
-// Use the variable `thirsty` as part of your conditional expression.
-// A:
-if thirsty = true;
-
-{
-  console.log("I'm parched!");
-} else if (false == 'thirsty'){
-  console.log("I've had enough to drink.");
-}
-
-// For questions 21 - 29 list which statement will be logged.
-
-// 21.
-let x;
-
-if(x == x){ 
-	console.log("True!");
-} else {
-	console.log("False!");
-}
-// A:
-
-
-// 22.
-if(""){
-	console.log("True!");
-} else {
-	console.log("False!");
-}
-// A:
-
-
-// 23.
-// this expression will set x to NaN
-let x = 1 * undefined;
-
-if(x == ""){
-	console.log("True!");
-} else {
-	console.log("False!");
-}
-// A:
-
-
-// 24.
-if(false){
-	console.log("True!");
-} else {
-	console.log("False!");
-}
-// A:
-
-
-// 25.
-if(-5 && 5){
-	console.log("True!");
-} else {
-	console.log("False!");
-}
-// A:
-
-
-// 26.
-if("Hello World!"){
-	console.log("True!");
-} else {
-	console.log("False!");
-}
-// A:
-
-
-// 27.
-if({}){
-	console.log("True!");
-} else {
-	console.log("False!");
-}
-// A:
-
-
-// 28.
-if({name: "Yehuda Katz"}){
-	console.log("True!");
-} else {
-	console.log("False!");
-}
-// A:
-
-
-// 29.
-if(new Date()){
-	console.log("True!");
-} else {
-	console.log("False!");
-}
-// A:
-
-
-// 30.
-// Link this file to the sibling `index.html` document, open the file in your browser and make sure there are no errors in your console.
+// Write a function called `madlib` that takes 4 or more parameters (words).
+// The function should insert the words into a pre-defined sentence.
+// Finally the function should return that sentence.
+// Note: When I say words and sentence I mean strings. For example:
+// words: "quick", "fox", "fence"
+// sentence: "quick brown fox jumps over the fence"
+// Then, write and example of using the function.
