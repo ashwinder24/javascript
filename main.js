@@ -1,107 +1,55 @@
-// Since the `data.js` file is loaded in your `index.html` before this one,
-// you have access to the `data` variable that contains the Etsy Store data.
-// Open your `index.html` page in your browser and you can verify that the following
-// is properly working. The `data` variable is an array with 25 items in it
-console.log(data);
+//for (i=0; i < customers.length; i++){
+let container = document.querySelector(".container");
+// let cust  = document.createElement("div");
+// let parent = document.createElement("main");
+// let head = document.createElement("h1");
+// let  headTest =document.createTextNode("INTERNAL COMPANY DIRECTORS");
+// head.appendChild(headTest);
+// cust.appendChild(head);
+// body1.appendChild(head);
+// body1.appendChild(parent);
+// parent.appendChild(cust);
+// cust.className = "block";
+// parent.className = "parent"
+
+//
+// for ( i=0; i < customers.results.length; i++){
+// let image1 = document.createElement("IMG");
+// image1.setAttribute("src", customers.results[i].picture.large);
+// cust.appendChild(image1);
+//
+// }
 
 
+for (i=0; i < customers.results.length; i++){
+  // let image1 = document.createElement("IMG");
+  // image1.setAttribute("src", customers.results[i].picture.large);
+  // cust.appendChild(image1);
+  let cust  = document.createElement("div");
+   let first = customers.results[i].name.first;
+   let last = customers.results[i].name.last;
+    let email = customers.results[i].email;
+    let Street = customers.results[i].location.street;
+    let city = customers.results[i].location.city;
+    let state = customers.results[i].location.state;
+    let postcode = customers.results[i].location.postcode;
+    let mobile = customers.results[i].phone;
+    let ss = customers.results[i].id.value;
+    cust.innerHTML = `
+    <article>
+<img src="${customers.results[i].picture.large}">
+<h3>${first} ${last}</h3>
+<p>${email}</p>
+<p>${Street}</p>
+<p>${city} ${state} ${postcode}</p>
+<p>${mobile}</p>
+<p>${ss}</p>
 
-// 1: Show me how to calculate the average price of all items.
-function question1 () {
-let total = 0;
-for (let i = 0; i < data.length; i++){
+</article>
+  `;
 
-  sum = total += data[i].price / data.length;
-  }
+container.appendChild(cust);
+ // document.querySelector(".container").innerHTML = post;
+ // document.write(post);
 
-  console.log(sum);
-
-}
-//  Return aver;
-
-
-
-
-
-// 2: Show me how to get an array of items that cost between $14.00 and $18.00 USD
-function question2 () {
-
-  for (let i = 0; i < data.length; i++){
-    cost = data[i].price;
-      items = data[i].title;
-    if (cost >= 14 && cost <=18){
-    // cost >= 14 && cost <=18);
-    console.log(items);
-  }
-}  //  if
-//      return data.title[]
-  //  }
-  // }
-
-  // Answer:
-}
-
-
-
-// 3: Which item has a "GBP" currency code? Display it's name and price.
-function question3 () {
-  for (let i = 0; i < data.length; i++){
-    cost = data[i].price;
-    items = data[i].title;
-    currencyType = data[i].currency_code;
-    if (currencyType === "GBP"){
-
-    console.log(items,cost);}
-  }// Answer:
-}
-
-
-// 4: Display a list of all items who are made of wood.
-function question4 () {
-  // Answer:for (let i = 0; i < data.length; i++){
-  for (let i = 0; i < data.length; i++){
-    items = data[i].title;
-    for (let j = 0; j < data[i].materials.length; j++) {  
-      materialType = data[i].materials[j];
-    
-    //type = materialType[j];
-    if (materialType === "wood"){
-
-    console.log(items + " is made of wood.");}
-    }
-  }
-}
-
-
-// 5: Which items are made of eight or more materials?
-//    Display the name, number of items and the items it is made of.
-function question5 () {
-    for (let i = 0; i < data.length; i++){
-         items = data[i].title;
-         itemsNumber = data[i].state;
-        
-    for (let j = 0; j < data[i].materials.length; j++) {  
-        items = data[i].title;
-      materialType = data[i].materials[j].length;
-    
-    //type = materialType[j];
-    if (materialType >= 8){
-
-    console.log(items);}
-    }
-  }
-  // Answer:
-}
-
-
-// 6: How many items were made by their sellers?
-// Answer:
-function question6 () {
-  for (let i = 0; i < data.length; i++){
-
-    composer = data[i].who_made;
-    if (composer === "i_did"){
-sellerItems = composer.length;
-      console.log(sellerItems);}
-  }
 }
