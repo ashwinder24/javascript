@@ -1,55 +1,39 @@
-//for (i=0; i < customers.length; i++){
-let container = document.querySelector(".container");
-// let cust  = document.createElement("div");
-// let parent = document.createElement("main");
-// let head = document.createElement("h1");
-// let  headTest =document.createTextNode("INTERNAL COMPANY DIRECTORS");
-// head.appendChild(headTest);
-// cust.appendChild(head);
-// body1.appendChild(head);
-// body1.appendChild(parent);
-// parent.appendChild(cust);
-// cust.className = "block";
-// parent.className = "parent"
+/*
+   Implement a Blackjack hand value calculator.
 
-//
-// for ( i=0; i < customers.results.length; i++){
-// let image1 = document.createElement("IMG");
-// image1.setAttribute("src", customers.results[i].picture.large);
-// cust.appendChild(image1);
-//
-// }
+   Open up the `index.html` file and your console
+   to watch the assertions pass as you write your code.
 
+   Also remember, that the parameter `hand` will be an array, so
+   you'll need to parse through that first before you can start to
+   write your logic.
+*/
+function handValue (hand) {
+  let total = 0;
+  for (var i = 0; i < hand.length; i++) {
+    if (hand[i] === "K" || hand[i] ==="Q" || hand[i] ==="J"){
+      total = total + 10;
 
-for (i=0; i < customers.results.length; i++){
-  // let image1 = document.createElement("IMG");
-  // image1.setAttribute("src", customers.results[i].picture.large);
-  // cust.appendChild(image1);
-  let cust  = document.createElement("div");
-   let first = customers.results[i].name.first;
-   let last = customers.results[i].name.last;
-    let email = customers.results[i].email;
-    let Street = customers.results[i].location.street;
-    let city = customers.results[i].location.city;
-    let state = customers.results[i].location.state;
-    let postcode = customers.results[i].location.postcode;
-    let mobile = customers.results[i].phone;
-    let ss = customers.results[i].id.value;
-    cust.innerHTML = `
-    <article>
-<img src="${customers.results[i].picture.large}">
-<h3>${first} ${last}</h3>
-<p>${email}</p>
-<p>${Street}</p>
-<p>${city} ${state} ${postcode}</p>
-<p>${mobile}</p>
-<p>${ss}</p>
-
-</article>
-  `;
-
-container.appendChild(cust);
- // document.querySelector(".container").innerHTML = post;
- // document.write(post);
-
+    }
+    else if ( hand[i] === "A" ){
+      if ( total <= 10){
+        total = total + 11;
+      }
+      else{
+        total = total + 1;
+      }
+    }
+    else {
+      total += Number(hand[i]);
+    }
+  }
+  return total;
 }
+console.log(handValue(["2", "2", "8"]));
+/* -----  Hints ------
+
+1..10   ==> Worth face value (1 = 1, 4 = 4, etc)
+K, Q, J ==> Worth 10
+A       ==> Worth 1 or 11
+
+*/
